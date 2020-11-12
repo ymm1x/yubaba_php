@@ -1,0 +1,7 @@
+version: '3'
+services:
+  php:
+    image: php:7.4-cli
+    working_dir: /app/src
+    volumes:
+      - ./app:/app
