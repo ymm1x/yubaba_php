@@ -3,8 +3,6 @@
 # all targets are phony
 .PHONY: $(shell egrep -o ^[a-zA-Z_-]+: $(MAKEFILE_LIST) | sed 's/://')
 
-DOCKER_COMPOSE_YML ?= docker-compose.yml
-
 run: ## The application entry point
 	@docker-compose run -T --rm php bash -c 'php /app/entrypoint.php'
 
