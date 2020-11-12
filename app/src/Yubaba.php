@@ -36,7 +36,8 @@ class Yubaba
     // 入力文字列からランダムに一文字を選択する
     private static function _pickOneCharacter(string $str): string
     {
+        /** @noinspection PhpUnhandledExceptionInspection */
         $randomIndex = random_int(0, mb_strlen($str) - 1);
-        return $str[$randomIndex];
+        return mb_substr($str, $randomIndex, 1);
     }
 }
