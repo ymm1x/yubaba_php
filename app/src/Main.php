@@ -28,13 +28,8 @@ class Main
     // 対話的に標準入力から何らかの文字列を得る
     private static function _getStdinInteractively(): string
     {
-        while (true) {
-            $inputName = trim(fgets(STDIN));
-            if ($inputName !== '') {
-                break;
-            }
-        }
-
+        $fp = fopen('php://stdin', 'rb');
+        $inputName = trim(fgets($fp));
         return $inputName;
     }
 }
