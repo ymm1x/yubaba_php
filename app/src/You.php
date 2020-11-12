@@ -9,24 +9,14 @@ class You
 {
     private ?string $_name;
 
-    public static function createAsAnonymous(): self
-    {
-        return new self('');
-    }
-
-    private function __construct(string $_name)
+    public function __construct(string $_name)
     {
         $this->_name = $_name;
     }
 
-    public function setName(string $name): void
+    public function changeName(string $name): void
     {
         $this->_name = $name;
-    }
-
-    public function signContract(Contract $contract): void
-    {
-        $contract->sign($this->_name);
     }
 
     public function getName(): string
@@ -34,5 +24,9 @@ class You
         return $this->_name;
     }
 
-
+    // 契約書を受け取り署名する
+    public function signContract(Contract $contract): void
+    {
+        $contract->sign($this->_name);
+    }
 }

@@ -30,7 +30,7 @@ class Yubaba
 
         $newName = static::_pickOneCharacter($name);
         echo sprintf('今からお前の名前は%1$sだ。いいかい、%1$sだよ。分かったら返事をするんだ、%1$s!!', $newName);
-        $you->setName($newName);
+        $you->changeName($newName);
     }
 
     // 入力文字列からランダムに一文字を選択する
